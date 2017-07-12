@@ -61,13 +61,13 @@ public class MysqlGenerator {
         AutoGenerator mpg = new AutoGenerator().setGlobalConfig(
                 // 全局配置
                 new GlobalConfig()
-                        .setOutputDir("/develop/code/")//输出目录
+                        .setOutputDir("d:\\mybatis_plus_src\\")//输出目录
                         .setFileOverride(true)// 是否覆盖文件
                         .setActiveRecord(true)// 开启 activeRecord 模式
                         .setEnableCache(false)// XML 二级缓存
                         .setBaseResultMap(true)// XML ResultMap
                         .setBaseColumnList(true)// XML columList
-                        .setAuthor("Yanghu")
+                        .setAuthor("chenjs")
                 // 自定义文件命名，注意 %s 会自动填充表实体属性！
                 // .setMapperName("%sDao")
                 // .setXmlName("%sDao")
@@ -91,16 +91,16 @@ public class MysqlGenerator {
                         })
                         .setDriverName("com.mysql.jdbc.Driver")
                         .setUsername("root")
-                        .setPassword("521")
-                        .setUrl("jdbc:mysql://127.0.0.1:3306/mybatis-plus?characterEncoding=utf8")
+                        .setPassword("")
+                        .setUrl("jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf8")
         ).setStrategy(
                 // 策略配置
                 new StrategyConfig()
                         // .setCapitalMode(true)// 全局大写命名
                         // .setDbColumnUnderline(true)//全局下划线命名
-                        .setTablePrefix(new String[]{"bmd_", "mp_"})// 此处可以修改为您的表前缀
+//                        .setTablePrefix(new String[]{"bmd_", "mp_"})// 此处可以修改为您的表前缀
                         .setNaming(NamingStrategy.underline_to_camel)// 表名生成策略
-                        // .setInclude(new String[] { "user" }) // 需要生成的表
+                         .setInclude(new String[] { "staff_manager" }) // 需要生成的表
                         // .setExclude(new String[]{"test"}) // 排除生成的表
                         // 自定义实体父类
                         // .setSuperEntityClass("com.baomidou.demo.TestEntity")
@@ -130,8 +130,8 @@ public class MysqlGenerator {
         ).setPackageInfo(
                 // 包配置
                 new PackageConfig()
-                        .setModuleName("test")
-                        .setParent("com.baomidou")// 自定义包路径
+//                        .setModuleName("test")
+                        .setParent("test")// 自定义包路径
                         .setController("controller")// 这里是控制器包名，默认 web
         ).setCfg(
                 // 注入自定义配置，可以在 VM 中使用 cfg.abc 设置的值
